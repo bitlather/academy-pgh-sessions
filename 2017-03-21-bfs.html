@@ -1,0 +1,80 @@
+<script>
+class Queue {
+
+    constructor() {
+        this.data_array = [];
+        console.log("Instantiated a Queue");
+    }
+
+    Enqueue(node) {
+        this.data_array.push(node);
+        console.log("-- Enqueued " + node.value)
+    }
+
+    Dequeue() {
+        var node = this.data_array.shift();
+        console.log("Dequeued " + node.value)
+        return node;
+    }
+
+    IsEmpty() {
+        return this.data_array.length <= 0;
+    }
+}
+
+// The tree:
+//
+//          A
+//        /   \
+//       B     C
+//      / \   / \
+//     D   E F   G
+var tree = {
+    value : 'A',
+    left  : {
+        value : 'B',
+        left  : {
+            value : 'D'
+        },
+        right : {
+            value : 'E'
+        }
+    },
+    right : {
+        value : 'C',
+        left  : {
+            value : 'F'
+        },
+        right : {
+            value : 'G'
+        }
+    }
+}
+
+function BFS(tree_root, search_value) {
+    var Q = new Queue();
+    Q.Enqueue(tree_root);
+
+    while (!Q.IsEmpty()) {
+
+        var node = Q.Dequeue();
+
+        if (node.value == search_value) {
+            console.log("Found " + node.value);
+            return node;
+        }
+        if ('left' in node) {
+            Q.Enqueue(node.left);
+        }
+        if ('right' in node) {
+            Q.Enqueue(node.right);
+        }
+    }
+    console.log("Couldn't find " + search_value);
+    return null;
+}
+
+var node = BFS(tree, 'H');
+
+</script>
+

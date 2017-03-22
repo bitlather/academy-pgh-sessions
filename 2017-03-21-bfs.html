@@ -80,10 +80,10 @@ function BFS(tree_root, search_value) {
             console.log("Found " + node.value);
             return node;
         }
-        if ('left' in node) {
+        if ('left' in node && node.left != null) {
             Q.Enqueue(node.left);
         }
-        if ('right' in node) {
+        if ('right' in node && node.right != null) {
             Q.Enqueue(node.right);
         }
     }
@@ -94,7 +94,7 @@ function BFS(tree_root, search_value) {
 var node;
     
 console.log("==============================");
-console.log("Searching for 'A'");
+console.log("Searching for 'A' (the root)");
 node = BFS(tree, 'A');
 console.log("\nThe result of BFS(tree, 'A') is:");
 console.log(node);

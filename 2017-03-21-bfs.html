@@ -1,4 +1,12 @@
-Look at the console.
+<h1>Breadth-First Search using Queues</h1>
+
+<p>Look at the console to see what's happening at every step.</p>
+
+<ul>
+    <li><a href="https://en.wikipedia.org/wiki/Breadth-first_search#/media/File:Animated_BFS.gif">Wikipedia GIF that explains BFS</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Breadth-first_search">Wikipedia page about BFS</a></li>
+</ul>
+
 <script>
 class Queue {
 
@@ -75,7 +83,19 @@ function BFS(tree_root, search_value) {
     return null;
 }
 
-var node = BFS(tree, 'H');
+var node;
+    
+console.log("==============================");
+console.log("Searching for 'A'");
+node = BFS(tree, 'A');
+
+console.log("==============================");
+console.log("Searching for 'F'");
+node = BFS(tree, 'F');
+
+console.log("==============================");
+console.log("Searching for 'H' (does not exist)");
+node = BFS(tree, 'H');
 
 </script>
 

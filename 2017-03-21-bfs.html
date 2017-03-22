@@ -1,6 +1,12 @@
-<h1>Breadth-First Search using Queues</h1>
+<title>Academy Pittsburgh Theory Session: Breadth-First Search</title>
+<h1>Breadth-First Search (BFS) using Queues</h1>
+<i>by David T. Allen</i>
 
-<p>Look at the console to see what's happening at every step.</p>
+<p>Look at the console to see see the results of BFS and get information about what happens at every step.</p>
+
+<p>Remember, BFS uses a first-in-first-out queue, which is like taking a number at the deli counter. Every customer that showed up at the deli is served before you.</p>
+
+<p>These reference links may be helpful:</p>
 
 <ul>
     <li><a href="https://en.wikipedia.org/wiki/Breadth-first_search#/media/File:Animated_BFS.gif">Wikipedia GIF that explains BFS</a></li>
@@ -88,14 +94,19 @@ var node;
 console.log("==============================");
 console.log("Searching for 'A'");
 node = BFS(tree, 'A');
+console.log("\nThe result of BFS(tree, 'A') is:");
+console.log(node);
 
 console.log("==============================");
 console.log("Searching for 'F'");
 node = BFS(tree, 'F');
+console.log("\nThe result of BFS(tree, 'F') is:");
+console.log(node);
 
 console.log("==============================");
 console.log("Searching for 'H' (does not exist)");
 node = BFS(tree, 'H');
+console.log("\nThe result of BFS(tree, 'H') is:");
+console.log(node);
 
 </script>
-

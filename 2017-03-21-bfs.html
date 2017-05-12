@@ -1,3 +1,26 @@
+<title>Academy Pittsburgh Theory Session: Breadth-First Search</title>
+<h1>Breadth-First Search (BFS) using Queues</h1>
+<i>by David T. Allen (Lecture time: ~40 minutes)</i>
+
+<p>Look at the console to see see the results of BFS and get information about what happens at every step.</p>
+
+<p>Remember, BFS uses a first-in-first-out queue, which is like taking a number at the deli counter. Every customer that showed up at the deli is served before you.</p>
+
+<p>Important terminology: a queue is a <b>data structure</b> and breadth-first search is an <b>algorithm</b>.</p>
+
+<p>Consider a full tree, which is a tree where every node has a left and right child. In terms of <i>space</i> performance, almost every time you dequeue an element, you enqueue two more. That means the queue grows by one element after every comparison.</p>
+
+<p>One advantage of BFS over DFS (depth-first search) is BFS can find the shortest path between two nodes on a graph, assuming all connected nodes are equal distances apart. In other words, it will give the shortest path when solving a maze but neither DFS nor BFS alone will give the shortest path on a map where a city is a node, because roads are different distances.</p>
+
+<p>These reference links may be helpful:</p>
+
+<ul>
+    <li><a href="https://en.wikipedia.org/wiki/Breadth-first_search#/media/File:Animated_BFS.gif">Wikipedia GIF that explains BFS</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Breadth-first_search">Wikipedia page about BFS</a></li>
+</ul>
+
+
+
 <script>
 class Queue {
 
@@ -63,10 +86,10 @@ function BFS(tree_root, search_value) {
             console.log("Found " + node.value);
             return node;
         }
-        if ('left' in node) {
+        if ('left' in node && node.left != null) {
             Q.Enqueue(node.left);
         }
-        if ('right' in node) {
+        if ('right' in node && node.right != null) {
             Q.Enqueue(node.right);
         }
     }
@@ -74,7 +97,24 @@ function BFS(tree_root, search_value) {
     return null;
 }
 
-var node = BFS(tree, 'H');
+var node;
+    
+console.log("==============================");
+console.log("Searching for 'A' (the root)");
+node = BFS(tree, 'A');
+console.log("\nThe result of BFS(tree, 'A') is:");
+console.log(node);
+
+console.log("==============================");
+console.log("Searching for 'F'");
+node = BFS(tree, 'F');
+console.log("\nThe result of BFS(tree, 'F') is:");
+console.log(node);
+
+console.log("==============================");
+console.log("Searching for 'H' (does not exist)");
+node = BFS(tree, 'H');
+console.log("\nThe result of BFS(tree, 'H') is:");
+console.log(node);
 
 </script>
-

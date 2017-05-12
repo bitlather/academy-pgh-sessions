@@ -1,6 +1,8 @@
 <script type="text/javascript" src="olympics_data.js"></script>
 <!-- The above creates a variable "olympics" that is filled with an array of objects -->
 
+<li> Practice converting between ES6 and older javascript.
+
 <script>
 var data_from_2008 = olympics_data.filter(function (item) { return item.year == 2008; });
 console.log(data_from_2008.length);
@@ -21,4 +23,25 @@ var us_golds_2008_es6 = olympics_data
     .map(item => item.gold)
     .reduce((total, num) => total + num);
 console.log(us_golds_2008_es6);
+
+var us_silver_2008_es6 = olympics_data
+    .filter(item => item.year == 2008)
+    .filter(item => item.country == "United States")
+    .map(item => item.silver)
+    .reduce((total, num) => total + num);
+console.log(us_silver_2008_es6);
+
+var us_bronze_2008_es6 = olympics_data
+    .filter(item => item.year == 2008)
+    .filter(item => item.country == "United States")
+    .map(item => item.bronze)
+    .reduce((total, num) => total + num);
+console.log(us_bronze_2008_es6);
+
+var us_medals_2008_es6 = olympics_data
+    .filter(item => item.year == 2008)
+    .filter(item => item.country == "United States")
+    .map(item => item.gold + item.silver + item.bronze)
+    .reduce((total, num) => total + num);
+console.log(us_medals_2008_es6);
 </script>

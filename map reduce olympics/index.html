@@ -1,0 +1,24 @@
+<script type="text/javascript" src="olympics_data.js"></script>
+<!-- The above creates a variable "olympics" that is filled with an array of objects -->
+
+<script>
+var data_from_2008 = olympics_data.filter(function (item) { return item.year == 2008; });
+console.log(data_from_2008.length);
+
+var data_from_2009 = olympics_data.filter(function (item) { return item.year == 2009; });
+console.log(data_from_2009.length);
+
+var us_golds_2008 = olympics_data
+    .filter(function (item) { return item.year == 2008; })
+    .filter(function (item) { return item.country == "United States"; })
+    .map(function (item) { return item.gold; })
+    .reduce(function (total, num) { return total + num; });
+console.log(us_golds_2008);
+
+var us_golds_2008_es6 = olympics_data
+    .filter(item => item.year == 2008)
+    .filter(item => item.country == "United States")
+    .map(item => item.gold)
+    .reduce((total, num) => total + num);
+console.log(us_golds_2008_es6);
+</script>

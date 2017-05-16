@@ -60,4 +60,15 @@ var which_phelps_olympics_es6 = olympics_data
     .filter(item => item.athlete == "Michael Phelps")
     .map(item => item.year);
 console.log("Which olympics Phelps participated in using es6: " + which_phelps_olympics_es6.sort().join(', '));
+
+var phelps_medals_olympics_es6 = olympics_data
+    .filter(item => item.country == "United States")
+    .filter(item => item.athlete == "Michael Phelps");
+console.log("Phelps has "
+    + phelps_medals_olympics_es6.map(item => item.gold).reduce((total, num) => total+num)
+    + " golds, "
+    + phelps_medals_olympics_es6.map(item => item.silver).reduce((total, num) => total+num)
+    + " silvers, and "
+    + phelps_medals_olympics_es6.map(item => item.bronze).reduce((total, num) => total+num)
+    + " bronzes.")
 </script>

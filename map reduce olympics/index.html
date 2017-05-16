@@ -19,7 +19,7 @@ var us_golds_2008 = olympics_data
     .filter(function (item) { return item.country == "United States"; })
     .map(function (item) { return item.gold; })
     .reduce(function (total, num) { return total + num; });
-console.log("US golds in 2008: " + us_golds_2008);
+console.log("US gold medals in 2008: " + us_golds_2008);
 
 var us_golds_2008_es6 = olympics_data
     .filter(item => item.year == 2008)

@@ -9,43 +9,55 @@
 
 <script>
 var data_from_2008 = olympics_data.filter(function (item) { return item.year == 2008; });
-console.log(data_from_2008.length);
+console.log("How many elements of data from 2008: " + data_from_2008.length);
 
 var data_from_2009 = olympics_data.filter(function (item) { return item.year == 2009; });
-console.log(data_from_2009.length);
+console.log("How many elements of data from 2009: " + data_from_2009.length);
 
 var us_golds_2008 = olympics_data
     .filter(function (item) { return item.year == 2008; })
     .filter(function (item) { return item.country == "United States"; })
     .map(function (item) { return item.gold; })
     .reduce(function (total, num) { return total + num; });
-console.log(us_golds_2008);
+console.log("US golds in 2008: " + us_golds_2008);
 
 var us_golds_2008_es6 = olympics_data
     .filter(item => item.year == 2008)
     .filter(item => item.country == "United States")
     .map(item => item.gold)
     .reduce((total, num) => total + num);
-console.log(us_golds_2008_es6);
+console.log("US gold medals in 2008 using es6: " + us_golds_2008_es6);
 
 var us_silver_2008_es6 = olympics_data
     .filter(item => item.year == 2008)
     .filter(item => item.country == "United States")
     .map(item => item.silver)
     .reduce((total, num) => total + num);
-console.log(us_silver_2008_es6);
+console.log("US silver medals in 2008 using es6: " + us_silver_2008_es6);
 
 var us_bronze_2008_es6 = olympics_data
     .filter(item => item.year == 2008)
     .filter(item => item.country == "United States")
     .map(item => item.bronze)
     .reduce((total, num) => total + num);
-console.log(us_bronze_2008_es6);
+console.log("US bronze medals in 2008 using es6: " + us_bronze_2008_es6);
 
 var us_medals_2008_es6 = olympics_data
     .filter(item => item.year == 2008)
     .filter(item => item.country == "United States")
     .map(item => item.gold + item.silver + item.bronze)
     .reduce((total, num) => total + num);
-console.log(us_medals_2008_es6);
+console.log("US medals in 2008 using es6: " + us_medals_2008_es6);
+
+var phelps_olympics_es6 = olympics_data
+    .filter(item => item.country == "United States")
+    .filter(item => item.athlete == "Michael Phelps")
+    .length;
+console.log("Number of olympics that US athlete Michael Phelps participated in (assuming there aren't two different people named Michael Phelps) using es6: " + phelps_olympics_es6);
+
+var which_phelps_olympics_es6 = olympics_data
+    .filter(item => item.country == "United States")
+    .filter(item => item.athlete == "Michael Phelps")
+    .map(item => item.year);
+console.log("Which olympics Phelps participated in using es6: " + which_phelps_olympics_es6.sort().join(', '));
 </script>

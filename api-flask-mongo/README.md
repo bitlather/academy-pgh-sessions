@@ -131,7 +131,7 @@ check that port 28017 is secured for the network too.
 
 
 
-### Create a Database with Data
+### Intro to Mongo Commands & Creating a TV Database
 
 - In the window running the mongo shell, type the following to create the `tv` database, which has the `shows` collection, and three documents:
 

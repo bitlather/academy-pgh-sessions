@@ -169,17 +169,17 @@ db.shows.find({"name" : "Bob's Burgers"})
 - Let's add a new field to just two existing documents:
 
 ```
-db.shows.findAndModify({
-    query: { name: "Bob's Burgers" },
-    update: { $inc : { seasons: 7 } },
-})
-db.shows.findAndModify({
-    query: { name: "Rick and Morty" },
-    update: { $inc : { seasons: 3 } },
-})
+db.shows.update(
+    { name: "Bob's Burgers" },
+    { $set : { seasons: 7 } }
+)
+db.shows.update(
+    { name: "Rick and Morty" },
+    { $set : { seasons: 3 } }
+)
 ```
 
-_Note: If you forget $inc then it completely replaces the document with just the "seasons" field._
+_Note: If you forget $set then it completely replaces the document with just the "seasons" field._
 
 - Prove our data looks good: `db.shows.find()` Notice that "That 70's Show" does not have seasons. This would be impossible in a MySQL table, but Mongo's NoSQL structure lets you do things like that.
 

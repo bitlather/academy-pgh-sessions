@@ -17,6 +17,36 @@ Skills used:
 - REST APIs (GET, PUT, POST, DELETE)
 
 
+Setup Your Docker Container
+---------------------------
+
+```
+ssh academy@minecraft.lfgpgh.com
+    Password: academypgh
+
+# STOP: Ask dave for IP address here
+
+sudo docker run -it -p 192.168.1.220:27017:27017 -p 192.168.1.220:28017:28017 -p 192.168.1.220:5000:5000 -p 192.168.1.220:8022:22 --name davebuntu ubuntu
+
+adduser dave
+
+usermod -aG sudo dave
+
+apt-get update
+
+apt-get install nano
+
+apt-get install ssh
+
+nano /etc/ssh/sshd_config
+    Add this line:
+    AllowUsers dave
+
+service ssh restart
+
+su - dave
+
+
 Install Mongo
 -------------
 

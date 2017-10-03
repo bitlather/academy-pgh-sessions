@@ -34,6 +34,8 @@ usermod -aG sudo dave
 
 apt-get update
 
+apt-get install sudo
+
 apt-get install nano
 
 apt-get install ssh

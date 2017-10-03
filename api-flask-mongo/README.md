@@ -325,27 +325,27 @@ Content-Type   application/json
 - Call this endpoint to load the database.
 
 ```
-GET http://localhost:5000/seed
+GET http://###.###.###.###:5000/seed
 ```
 
 - View all TV shows:
 
 ```
-GET http://localhost:5000/show
+GET http://###.###.###.###:5000/show
 ```
 
 - Get a single show by its mongo Object ID:
 
 ```
-http://localhost:5000/show/59d2ee71f6e4b72b19d7b7cb
+http://###.###.###.###:5000/show/59d2ee71f6e4b72b19d7b7cb
 ```
 ```
-http://localhost:5000/show/59d2ee88f6e4b72b3fb0c7a5
+http://###.###.###.###:5000/show/59d2ee88f6e4b72b3fb0c7a5
 ```
 
 - Create a new show by setting URL to:
 ```
-POST http://localhost:5000/show
+POST http://###.###.###.###:5000/show
 ```
 ... then click Body tab, select the _raw_ radio button, and supply this in the textarea:
 ```
@@ -355,7 +355,7 @@ Notice the error.
 
 - Try to post again with:
 ```
-POST http://localhost:5000/show
+POST http://###.###.###.###:5000/show
 ```
 ```
 {
@@ -366,7 +366,7 @@ Rats; we still get an error.
 
 - Try again:
 ```
-POST http://localhost:5000/show
+POST http://###.###.###.###:5000/show
 ```
 ```
 {
@@ -381,12 +381,12 @@ POST http://localhost:5000/show
 
 - Now get all the results:
 ```
-GET http://localhost:5000/show
+GET http://###.###.###.###:5000/show
 ```
 
 - Oops teenage mutant ninja turtles is in there twice; let's delete one of them. Copy one of the `$oid` values and run the following, where $oid is replaced with the id:
 ```
-DELETE http://localhost:5000/show/$oid
+DELETE http://###.###.###.###:5000/show/$oid
 ```
 ... success, we got a 204 status code.
 
@@ -394,12 +394,12 @@ DELETE http://localhost:5000/show/$oid
 
 - Get all results to prove _Teenage Mutant Ninja Turtles_ only exists once:
 ```
-GET http://localhost:5000/show
+GET http://###.###.###.###:5000/show
 ```
 
 - Now let's edit one of the shows to make Dave famous and change the theme song (remember to paste the JSON into the body and ensure that the _raw_ radio option is selected):
 ```
-PUT http://localhost:5000/show/59d2ee88f6e4b72b3fb0c7a5
+PUT http://###.###.###.###:5000/show/59d2ee88f6e4b72b3fb0c7a5
 ```
 ```
 {
@@ -410,5 +410,5 @@ PUT http://localhost:5000/show/59d2ee88f6e4b72b3fb0c7a5
 
 - Let's look at everything one more time:
 ```
-GET http://localhost:5000/show
+GET http://###.###.###.###:5000/show
 ```

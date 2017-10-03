@@ -22,40 +22,52 @@ def seed():
     #
     mongo.db.show.delete_many({})
     mongo.db.show.insert({
-        "_id" : '1',
+        "_id": ObjectId("59d2ee71f6e4b72b19d7b7cb"),
         "name" : "That 70s Show",
         "first_episode_date" : "1998-08-23",
         "theme_song" : "In the Street"
         })
     mongo.db.show.insert({
-        "_id" : '2',
+        "_id": ObjectId("59d2ee88f6e4b72b3fb0c7a5"),
         "name" : "Rick and Morty",
         "first_episode_date" : "2013-12-02",
         "theme_song" : "Rick and Morty Theme Song"
         })
     mongo.db.show.insert({
-        "_id" : '3',
+        "_id": ObjectId("59d2eef8f6e4b72bfbeba337"),
         "name" : "Bob's Burgers",
         "first_episode_date" : "2011-01-09",
         "theme_song" : "Bob's Burgers Theme"
         })
-    return 'done'
+    return {'message' : 'Done. Note that this endpoint is just to make our lives easier, and is not a good practice. Not even a little bit.'}
 
 
 @app.route('/show') # GET /show
 def GET_show():
+    """
+    Return all shows.
+    """
     show = list(mongo.db.show.find())
-    return json.dumps(show, default=json_util.default)
+    return json.dumps(show, default=json_util.default), status.HTTP_200_OK
 
 
 @app.route('/show/<show_id>') # GET /show/{id}
 def GET_show_id(show_id):
-    show = list(mongo.db.show.find({ "_id" : str(show_id) }))
-    return json.dumps(show, default=json_util.default)
+    """
+    Return a single show if the id is found; returns 404 otherwise.
+    """
+    show = list(mongo.db.show.find({ "_id" : ObjectId(show_id) }))
+    if len(show) > 0:
+        return json.dumps(show[0], default=json_util.default), status.HTTP_200_OK
+    else:
+        return {'error' : 'show not found'}, status.HTTP_404_NOT_FOUND
 
 
 @app.route('/show/<show_id>', methods=['DELETE']) # DELETE /show/{id}
 def DELETE_show_id(show_id):
+    """
+    Deletes a single show if ID is found; returns 404 otherwise.
+    """
     result = mongo.db.show.delete_one({ "_id" : str(show_id) })
     if result.deleted_count == 1:
         return '', status.HTTP_204_NO_CONTENT
@@ -63,6 +75,30 @@ def DELETE_show_id(show_id):
         return {'error' : 'document not found'}, status.HTTP_404_NOT_FOUND
 
 
-@app.route('/show', methods=['POST'])
+@app.route('/show', methods=['POST']) # POST /show
 def POST_show():
-    return 'done'
+    """
+    Create a show.
+    """
+    data = request.json
+
+    if not 'name' in data or len(data['name']) == 0:
+        return {'error' : 'name is required'}, status.HTTP_400_BAD_REQUEST
+
+    if not 'first_episode_date' in data or len(data['first_episode_date']) == 0:
+        return {'error' : 'first_episode_date is required'}, status.HTTP_400_BAD_REQUEST
+
+    if not 'theme_song' in data or len(data['theme_song']) == 0:
+        return {'error' : 'theme_song is required'}, status.HTTP_400_BAD_REQUEST
+
+    document = {
+        'name' : data['name'],
+        'first_episode_date' : data['first_episode_date'],
+        'theme_song' : data['theme_song']
+        }
+
+    result = mongo.db.show.insert_one(document)
+
+    document['_id'] = result.inserted_id
+
+    return json.dumps(document, default=json_util.default), status.HTTP_201_CREATED

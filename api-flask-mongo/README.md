@@ -298,6 +298,8 @@ deactivate
 
 ### Running our Flask API
 
+In this step, we will run the application in this folder's `my_api.py`.
+
 - SSH into your ubuntu instance and run the following:
 
 ```
@@ -312,5 +314,100 @@ flask run
 ```
  * Serving Flask app "my_api"
  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
- ```
+```
 
+- Open Postman from the Chrome browser.
+
+- Set Headers to:
+
+```
+KEY            VALUE
+============   ================
+Content-Type   application/json
+```
+
+- Call this endpoint to load the database.
+
+```
+GET http://localhost:5000/seed
+```
+
+- View all TV shows:
+
+```
+GET http://localhost:5000/show
+```
+
+- Get a single show by its mongo Object ID:
+
+```
+http://localhost:5000/show/59d2ee71f6e4b72b19d7b7cb
+```
+```
+http://localhost:5000/show/59d2ee88f6e4b72b3fb0c7a5
+```
+
+- Create a new show by setting URL to:
+```
+POST http://localhost:5000/show
+```
+... then click Body tab, select the _raw_ radio button, and supply this in the textarea:
+```
+{}
+```
+Notice the error.
+
+- Try to post again with:
+```
+POST http://localhost:5000/show
+```
+```
+{
+    "name" : "Teenage Mutant Ninja Turtles"
+}
+```
+Rats; we still get an error.
+
+- Try again:
+```
+POST http://localhost:5000/show
+```
+```
+{
+    "name" : "Teenage Mutant Ninja Turtles",
+    "first_episode_date" : "1987-12-28",
+    "theme_song" : "TMNT Theme Song"
+}
+```
+... success!
+
+- Press the send button again.
+
+- Now get all the results:
+```
+GET http://localhost:5000/show
+```
+
+- Oops teenate mutant ninja turtles is in there twice; let's delete one of them. Copy one of the `$oid` values and run the following, where $oid is replaced with the id:
+```
+DELETE http://localhost:5000/show/$oid
+```
+... success, we got a 204 status code.
+
+- Press send again. Since we already deleted it, we get a 404 status code.
+
+- Get all results to prove _Teenage Mutant Ninja Turtles_ only exists once:
+```
+GET http://localhost:5000/show
+```
+
+- Now let's edit one of the shows to make Dave famous and change the theme song (remember to paste the JSON into the body and ensure that the _raw_ radio option is selected):
+```
+PUT http://localhost:5000/show/59d2ee88f6e4b72b3fb0c7a5
+```
+```
+{
+    "name" : "Dave and Morty",
+    "theme_song" : "Wake Me Up Before You Go-Go"
+}
+```

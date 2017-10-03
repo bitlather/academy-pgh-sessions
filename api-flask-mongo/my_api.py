@@ -69,7 +69,7 @@ def DELETE_show_id(show_id):
     """
     Deletes a single show if ID is found; returns 404 otherwise.
     """
-    result = mongo.db.show.delete_one({ "_id" : str(show_id) })
+    result = mongo.db.show.delete_one({ "_id" : ObjectId(show_id) })
     if result.deleted_count == 1:
         return '', status.HTTP_204_NO_CONTENT
     else:

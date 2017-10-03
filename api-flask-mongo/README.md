@@ -326,7 +326,7 @@ KEY            VALUE
 Content-Type   application/json
 ```
 
-- Call this endpoint to load the database.
+- Call this endpoint to destroy the database collection and load it with pre-defined data.
 
 ```
 GET http://###.###.###.###:5000/seed

@@ -5,11 +5,6 @@ In this lab, we will create an API using Python's Flask framework and Mongo as o
 
 A mongo database can be interacted with like an API, so we'll start there. Once we are comfortable calling an API, we will create our own API endpoints in Flask.
 
-Create a non-root user
-----------------------
-
-_I'm not sure if this is necessary; this is our first time using the instances John Lange put together so maybe he already did this. If not, we'll deal with it during the session._
-
 
 Install Mongo
 -------------
@@ -109,7 +104,8 @@ check that port 28017 is secured for the network too.
 
 
 
-### Create a Mongo Database via Terminal
+Create a Mongo Database via Terminal
+------------------------------------
 
 - Open a new terminal window and SSH in to your Ubuntu 14 instance. _One terminal must have `mongod` running for this to work, that's why we now have two terminals!_
 
@@ -126,8 +122,6 @@ check that port 28017 is secured for the network too.
 - Visit http://###.###.###.###:28017 and click _List Databases_. Your new database should be listed there.
 
 - Let's destroy the database. In your terminal, run `db.dropDatabase()`. It should be removed. Verify by checking it's not listed in `show dbs`.
-
-
 
 
 
@@ -267,7 +261,8 @@ http://###.###.###.###:28017/tv/show/?filter_seasons=7
 ```
 
 
-### Installing Our Flask API
+Installing Our Flask API
+------------------------
 
 The following instructions assume you have python 2.7. You can check with `python --version`.
 
@@ -296,7 +291,8 @@ deactivate
 ```
 
 
-### Running our Flask API
+Running our Flask API
+---------------------
 
 In this step, we will run the application in this folder's `my_api.py`.
 
@@ -388,7 +384,7 @@ POST http://localhost:5000/show
 GET http://localhost:5000/show
 ```
 
-- Oops teenate mutant ninja turtles is in there twice; let's delete one of them. Copy one of the `$oid` values and run the following, where $oid is replaced with the id:
+- Oops teenage mutant ninja turtles is in there twice; let's delete one of them. Copy one of the `$oid` values and run the following, where $oid is replaced with the id:
 ```
 DELETE http://localhost:5000/show/$oid
 ```
@@ -410,4 +406,9 @@ PUT http://localhost:5000/show/59d2ee88f6e4b72b3fb0c7a5
     "name" : "Dave and Morty",
     "theme_song" : "Wake Me Up Before You Go-Go"
 }
+```
+
+- Let's look at everything one more time:
+```
+GET http://localhost:5000/show
 ```

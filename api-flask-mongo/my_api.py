@@ -10,6 +10,7 @@ app = FlaskAPI(__name__)
 app.config['MONGO_DBNAME'] = 'tv'
 mongo = PyMongo(app, config_prefix='MONGO')
 
+
 @app.route('/seed') # GET /seed
 def seed():
     #
@@ -56,11 +57,11 @@ def GET_show_id(show_id):
     """
     Return a single show if the id is found; returns 404 otherwise.
     """
-    show = list(mongo.db.show.find({ "_id" : ObjectId(show_id) }))
-    if len(show) > 0:
-        return json.dumps(show[0], default=json_util.default), status.HTTP_200_OK
-    else:
+    show = mongo.db.show.find_one({ "_id" : ObjectId(show_id) })
+    if show == None:
         return {'error' : 'show not found'}, status.HTTP_404_NOT_FOUND
+    else:
+        return json.dumps(show, default=json_util.default), status.HTTP_200_OK
 
 
 @app.route('/show/<show_id>', methods=['DELETE']) # DELETE /show/{id}
@@ -102,3 +103,38 @@ def POST_show():
     document['_id'] = result.inserted_id
 
     return json.dumps(document, default=json_util.default), status.HTTP_201_CREATED
+
+
+@app.route('/show/<show_id>', methods=['PUT']) # PUT /show/id
+def PUT_show(show_id):
+    """
+    Edit a show.
+    """
+    show = mongo.db.show.find_one({ "_id" : ObjectId(show_id) })
+    if show == None:
+        return {'error' : 'show not found'}, status.HTTP_404_NOT_FOUND
+
+    data = request.json
+
+    update_set = {}
+
+    if 'name' in data:
+        if len(data['name']) == 0:
+            return {'error' : 'name must have a value'}, status.HTTP_400_BAD_REQUEST
+        update_set['name'] = data['name']
+
+    if 'first_episode_date' in data:
+        if len(data['first_episode_date']) == 0:
+            return {'error' : 'first_episode_date must have a value'}, status.HTTP_400_BAD_REQUEST
+        update_set['first_episode_date'] = data['first_episode_date']
+
+    if 'theme_song' in data:
+        if len(data['theme_song']) == 0:
+            return {'error' : 'theme_song must have a value'}, status.HTTP_400_BAD_REQUEST
+        update_set['theme_song'] = data['theme_song']
+
+    mongo.db.show.update({'_id': ObjectId(show_id)}, {'$set': update_set})
+
+    result = mongo.db.show.find_one({ "_id" : ObjectId(show_id) })
+
+    return json.dumps(result, default=json_util.default), status.HTTP_200_OK

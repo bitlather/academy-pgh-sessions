@@ -133,21 +133,21 @@ check that port 28017 is secured for the network too.
 
 ### Intro to Mongo Commands & Creating a TV Database
 
-- In the window running the mongo shell, type the following to create the `tv` database, which has the `shows` collection, and three documents:
+- In the window running the mongo shell, type the following to create the `tv` database, which has the `show` collection, and three documents:
 
 ```
 use tv
-db.shows.insert({
+db.show.insert({
     "name" : "That 70s Show",
     "first_episode_date" : "1998-08-23",
     "theme_song" : "In the Street"
 })
-db.shows.insert({
+db.show.insert({
     "name" : "Rick and Morty",
     "first_episode_date" : "2013-12-02",
     "theme_song" : "Rick and Morty Theme Song"
 })
-db.shows.insert({
+db.show.insert({
     "name" : "Bob's Burgers",
     "first_episode_date" : "2011-01-09",
     "theme_song" : "Bob's Burgers Theme"
@@ -157,23 +157,23 @@ db.shows.insert({
 - Prove the data exists by finding it:
 
 ```
-db.shows.find()
+db.show.find()
 ```
 
 - Filter data:
 
 ```
-db.shows.find({"name" : "Bob's Burgers"})
+db.show.find({"name" : "Bob's Burgers"})
 ```
 
 - Let's add a new field to just two existing documents:
 
 ```
-db.shows.update(
+db.show.update(
     { name: "Bob's Burgers" },
     { $set : { seasons: 7 } }
 )
-db.shows.update(
+db.show.update(
     { name: "Rick and Morty" },
     { $set : { seasons: 3 } }
 )
@@ -181,12 +181,12 @@ db.shows.update(
 
 _Note: If you forget $set then it completely replaces the document with just the "seasons" field._
 
-- Prove our data looks good: `db.shows.find()` Notice that "That 70's Show" does not have seasons. This would be impossible in a MySQL table, but Mongo's NoSQL structure lets you do things like that.
+- Prove our data looks good: `db.show.find()` Notice that "That 70's Show" does not have seasons. This would be impossible in a MySQL table, but Mongo's NoSQL structure lets you do things like that.
 
 - Now let's just get data that has more than 4 seasons:
 
 ```
-db.shows.find({ seasons: { $gt : 4 } })
+db.show.find({ seasons: { $gt : 4 } })
 ```
 
 _For more information on how to query data in Mongo, see the documentation here: https://docs.mongodb.com/manual/reference/method/db.collection.find/_
@@ -203,7 +203,7 @@ We'll use mongo's native REST API, which only allows for fetching data. So, we n
 
 - You should still have `mongo` running in a terminal window; if not, SSH in and run it now.
 
-- You should have the tv database with the shows collection created in a previous step.
+- You should have the tv database with the show collection created in a previous step.
 
 - We will use a program called `curl` to hit mongo's API endpoints from the commandline. If the following fails, there should be on-screen commands to follow in order to install curl. But, before we hit the mongo's REST endpoint, run this and compare the output to the source for google.com:
 
@@ -217,23 +217,23 @@ _Notice that it loads HTML, which is the same as google.com's source. You can al
 
 ```
 # (you're SSH'd in, right?)
-curl http://localhost:28017/tv/shows/
+curl http://localhost:28017/tv/show/
 # Note: this may fail if you don't include the final slash
 ```
 
 - API endpoints can accept arguments in the url after a `?`. Try the following, and be careful to include the final slash and quotes (when specified):
 
 ```
-curl http://localhost:28017/tv/shows/?limit=2
+curl http://localhost:28017/tv/show/?limit=2
 ```
 ```
-curl "http://localhost:28017/tv/shows/?limit=2&skip=1"
+curl "http://localhost:28017/tv/show/?limit=2&skip=1"
 ```
 ```
-curl "http://localhost:28017/tv/shows/?filter_seasons=7"
+curl "http://localhost:28017/tv/show/?filter_seasons=7"
 ```
 ```
-curl "http://127.0.0.1:28017/tv/shows/?filter_seasons=3"
+curl "http://127.0.0.1:28017/tv/show/?filter_seasons=3"
 ```
 
 - **The more you know:** `localhost` is the same as `127.0.0.1`.
@@ -257,17 +257,17 @@ All of the requirements listed for _Mongo REST Commands from the Command Line_ s
 - Enter the following URLs, one at a time, replacing `###.###.###.###` with your IP address, and press the `Send` button:
 
 ```
-http://###.###.###.###:28017/tv/shows/?limit=2
+http://###.###.###.###:28017/tv/show/?limit=2
 ```
 ```
-http://###.###.###.###:28017/tv/shows/?limit=2&skip=1
+http://###.###.###.###:28017/tv/show/?limit=2&skip=1
 ```
 ```
-http://###.###.###.###:28017/tv/shows/?filter_seasons=7
+http://###.###.###.###:28017/tv/show/?filter_seasons=7
 ```
 
 
-### Installing Our Flask App
+### Installing Our Flask API
 
 The following instructions assume you have python 2.7. You can check with `python --version`.
 
@@ -289,4 +289,28 @@ sudo apt-get install python-virtualenv
 ```
 cd ~/github/academy-pgh-sessions/api-flask-mongo
 . venv/bin/activate
+pip install -r requirements.txt
 ```
+```
+deactivate
+```
+
+
+### Running our Flask API
+
+- SSH into your ubuntu instance and run the following:
+
+```
+cd ~/github/academy-pgh-sessions/api-flask-mongo
+. venv/bin/activate
+export FLASK_APP=my_api.py
+flask run
+```
+
+- Once you see the following, your API is ready:
+
+```
+ * Serving Flask app "my_api"
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ ```
+

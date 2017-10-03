@@ -45,6 +45,7 @@ nano /etc/ssh/sshd_config
 service ssh restart
 
 su - dave
+```
 
 
 Install Mongo

@@ -151,7 +151,13 @@ check that port 28017 is secured for the network too.
 Create a Mongo Database via Terminal
 ------------------------------------
 
-- Open a new terminal window and SSH in to your Ubuntu 14 instance. _One terminal must have `mongod` running for this to work, that's why we now have two terminals!_
+- Open a new terminal window and SSH in to your Ubuntu 14 instance: _One terminal must have `mongod` running for this to work, that's why we now have two terminals!_
+
+```
+ssh academy@minecraft.lfgpgh.com
+    Password: academypgh
+ssh -p 8022 dave@192.168.1.###
+```
 
 - Run `mongo`. You should see a greater-than sign with a prompt.
 

@@ -267,3 +267,26 @@ http://###.###.###.###:28017/tv/shows/?filter_seasons=7
 ```
 
 
+### Installing Our Flask App
+
+The following instructions assume you have python 2.7. You can check with `python --version`.
+
+Flask is the lightest web app framework I know, and probably the easiest to get up and running, so that's why we're using it today.
+
+This is a lesson on REST APIs, not the Flask framework, so I'll try to keep it as slim as possible.
+
+Run the following commans while SSH'd in to your instance of Ubuntu:
+
+```
+cd ~
+mkdir github
+cd github
+git clone git@github.com:bitlather/academy-pgh-sessions.git
+```
+```
+sudo apt-get install python-virtualenv
+```
+```
+cd ~/github/academy-pgh-sessions/api-flask-mongo
+. venv/bin/activate
+```

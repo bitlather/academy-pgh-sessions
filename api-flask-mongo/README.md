@@ -193,11 +193,9 @@ _For more information on how to query data in Mongo, see the documentation here:
 
 
 
-### Mongo REST Commands
+### Mongo REST Commands from the Command Line
 
 If you google "mongo api" you might not find what you expect. An API means "Application Programming Interface" and so it's not always a web API. Instead, you need to search for "mongo REST". It's kind of like how all squares are a rectangle but all rectangles aren't squares.
-
-This section is optional, and requires more installation, but it's good to see.
 
 We'll use mongo's native REST API, which only allows for fetching data. So, we need to create some data, first.
 
@@ -206,3 +204,66 @@ We'll use mongo's native REST API, which only allows for fetching data. So, we n
 - You should still have `mongo` running in a terminal window; if not, SSH in and run it now.
 
 - You should have the tv database with the shows collection created in a previous step.
+
+- We will use a program called `curl` to hit mongo's API endpoints from the commandline. If the following fails, there should be on-screen commands to follow in order to install curl. But, before we hit the mongo's REST endpoint, run this and compare the output to the source for google.com:
+
+```
+curl www.google.com
+```
+
+_Notice that it loads HTML, which is the same as google.com's source. You can also use curl to download files from the command line._
+
+- Now let's curl mongo's REST endpoint:
+
+```
+# (you're SSH'd in, right?)
+curl http://localhost:28017/tv/shows/
+# Note: this may fail if you don't include the final slash
+```
+
+- API endpoints can accept arguments in the url after a `?`. Try the following, and be careful to include the final slash and quotes (when specified):
+
+```
+curl http://localhost:28017/tv/shows/?limit=2
+```
+```
+curl "http://localhost:28017/tv/shows/?limit=2&skip=1"
+```
+```
+curl "http://localhost:28017/tv/shows/?filter_seasons=7"
+```
+```
+curl "http://127.0.0.1:28017/tv/shows/?filter_seasons=3"
+```
+
+- **The more you know:** `localhost` is the same as `127.0.0.1`.
+
+
+
+### Mongo REST Commands from Postman
+
+All of the requirements listed for _Mongo REST Commands from the Command Line_ still apply here; if you just finished that section then you shouldn't need to start any servers.
+
+- Open the Chrome browser.
+
+- Install the Postman plugin.
+
+- Go to your Chrome apps. This can usually be found by opening a new tab and clicking _Apps_ in the top-left corner of the page.
+
+- Click _Postman_ to open it.
+
+- Select `GET` from the drop down box.
+
+- Enter the following URLs, one at a time, replacing `###.###.###.###` with your IP address, and press the `Send` button:
+
+```
+http://###.###.###.###:28017/tv/shows/?limit=2
+```
+```
+http://###.###.###.###:28017/tv/shows/?limit=2&skip=1
+```
+```
+http://###.###.###.###:28017/tv/shows/?filter_seasons=7
+```
+
+

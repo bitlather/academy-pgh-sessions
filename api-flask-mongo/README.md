@@ -14,7 +14,7 @@ Skills used:
 - Mongo
 - Python
 - Flask
-- Rest APIs
+- REST APIs (GET, PUT, POST, DELETE)
 
 
 Install Mongo

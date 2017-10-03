@@ -1,9 +1,20 @@
 API Using Flask and Mongo
 =========================
 
-In this lab, we will create an API using Python's Flask framework and Mongo as our NoSQL database.
+In this lab, we will create an API using Python's Flask framework and Mongo as our NoSQL database. It is assumed you are running these instructions with the Ubuntu instances that John Lange has set up.
 
 A mongo database can be interacted with like an API, so we'll start there. Once we are comfortable calling an API, we will create our own API endpoints in Flask.
+
+Skills used:
+
+- SSH
+- Linux (ubuntu)
+- Curl
+- Postman
+- Mongo
+- Python
+- Flask
+- Rest APIs
 
 
 Install Mongo

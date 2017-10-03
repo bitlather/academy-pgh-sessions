@@ -312,6 +312,10 @@ flask run
  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 ```
 
+
+
+### Interacting With Our Flask API Endpoints
+
 - Open Postman from the Chrome browser.
 
 - Set Headers to:

@@ -42,6 +42,8 @@ apt-get install ssh
 
 apt-get install git
 
+apt-get install curl
+
 nano /etc/ssh/sshd_config
     Add this line:
     AllowUsers dave

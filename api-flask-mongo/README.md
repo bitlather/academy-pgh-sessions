@@ -108,13 +108,7 @@ sudo chown -R `id -u` /data/db
 
 - Now run `mongod`. _If you get an insufficient memory error, run `mongod --smallfiles`_
 
-- Notice you are not prompted to enter anything else. The last few lines of output should say something like:
-
-```
-[initandlisten] waiting for connections on port 27017
-[websvr] admin web console waiting for connections on port 28017
-```
-
+- Notice you are not prompted to enter anything else. After a few seconds, you should be good to go.
 
 
 

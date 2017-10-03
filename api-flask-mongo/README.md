@@ -40,6 +40,8 @@ apt-get install nano
 
 apt-get install ssh
 
+apt-get install git
+
 nano /etc/ssh/sshd_config
     Add this line:
     AllowUsers dave

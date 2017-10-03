@@ -119,6 +119,8 @@ sudo chown -R `id -u` /data/db
 
 ### Explore Mongo's Admin Console
 
+- Re-run mongo with `mongod --rest` (if you needed --smallfiles, run `mongod --rest --smallfiles`)
+
 - Get the IP address of your ubuntu instance and visit `http://###.###.###.###:27017`, where ### is replaced with your IP address. You should see:
 
 ```
@@ -135,8 +137,6 @@ check that port 28017 is secured for the network too.
 ```
 
 - Go back to your terminal. Press CTRL+C. This turns off mongo. _As proof, refresh your browser. It should say the site cannot be reached._
-
-- Re-run mongo with `mongod --rest` (if you needed --smallfiles, run `mongod --rest --smallfiles`)
 
 - Refresh your browser again. There should be a list of commands. _Notice how this became available when we ran mongod with the `--rest` flag._
 

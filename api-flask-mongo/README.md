@@ -22,6 +22,8 @@ Skills used:
 Setup Your Docker Container
 ---------------------------
 
+Mac users can run the following; Windows users should install Putty.
+
 ```
 ssh academy@minecraft.lfgpgh.com
     Password: academypgh

@@ -324,7 +324,7 @@ Run the following commans while SSH'd in to your instance of Ubuntu:
 cd ~
 mkdir github
 cd github
-git clone git@github.com:bitlather/academy-pgh-sessions.git
+git clone https://github.com/bitlather/academy-pgh-sessions.git
 ```
 ```
 sudo apt-get install python-virtualenv

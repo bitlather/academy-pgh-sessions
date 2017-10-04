@@ -327,7 +327,11 @@ cd github
 git clone https://github.com/bitlather/academy-pgh-sessions.git
 ```
 ```
-sudo apt-get install python-virtualenv
+# erm dont do this -->  sudo apt-get install python-virtualenv
+apt-get update
+apt-get -y install python-pip
+curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+python get-pip.py
 ```
 ```
 cd ~/github/academy-pgh-sessions/api-flask-mongo

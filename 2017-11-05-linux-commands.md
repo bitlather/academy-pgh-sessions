@@ -6,7 +6,7 @@ Use the instructions provided in the session for building your own Ubuntu instan
 If you are following from home, look for instructions on how to install docker. I already had ubuntu, so I used this guide (which won't work on OSX or Windows):
 - https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04
 
-Create Ubuntu Container
+Create Ubuntu container
 -----------------------
 
 Create your instance of ubuntu (do not copy the $, and replace `davebuntu` with `(yourname)buntu`):
@@ -37,8 +37,8 @@ Verify the installation version (do not copy the #, and compare the line with an
 If your version does not match, then things will probably still be fine for this tutorial; just be aware of it in case something goes wrong.
 
 
-Logging out and back in
------------------------
+Logging out and back in to ubuntu container
+-------------------------------------------
 You can press `CTRL+D` on Windows computers (`CMD+D` on OSX?) or type `exit` and press enter to exit.
 
 If you are SSH'd in then be careful about pressing `CTRL+D` too many times, as it will also break your SSH connection.
@@ -52,7 +52,7 @@ $ sudo docker attach davebuntu
 If you don't see `root@af2e62e7233d:/#` then you might just need to press enter.
 
 
-Installing Software
+Installing software
 -------------------
 We use `apt-get` in ubuntu to install software. First, we must update our repositories, so that we can then install the latest software. This is especially important for new Ubuntu containers in docker, as they come with practically nothing.
 ```

@@ -228,7 +228,8 @@ bash-3.2$
 ```
 
 Bash scripts
-
+------------
+TODO Create a bash script that echoes "hello" if a variable is on, then add it to cron so we can turn it on/off.
 
 Cron
 ----

@@ -59,7 +59,7 @@ We use `apt-get` in ubuntu to install software. First, we must update our reposi
 # apt-get update
 ```
 
-Now, we can install software. Here are some things we'll need:
+Now, we can install software. Let's start with python:
 ```
 # apt-get install python
 ```

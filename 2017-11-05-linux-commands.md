@@ -208,7 +208,7 @@ root@af2e62e7233d:/#
 
 Directory commands
 ------------------
-TODO ls, cd, grep, find, touch, find, tab
+TODO ls, cd, grep, find, touch, find, tab, cp, mkdir, rm, rmdir
 
 Variables
 ---------
@@ -239,8 +239,16 @@ Processes
 ---------
 TODO
 
+Redirecting command output to file
+----------------------------------
+TODO
+
 Tail
 ----
+TODO
+
+Cat
+---
 TODO
 
 curl

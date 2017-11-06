@@ -186,6 +186,25 @@ suzy@af2e62e7233d:/$ exit
 root@af2e62e7233d:/# 
 ```
 
+Let's try to create a user with bob again.
+
+```
+root@af2e62e7233d:/# su bob
+bob@af2e62e7233d:/$ sudo adduser gina
+[sudo] password for bob: 
+bob is not in the sudoers file.  This incident will be reported.
+bob@af2e62e7233d:/$ 
+```
+
+We never gave bob sudo powers, so apparently, the system is going to snitch on his attempt to do something he shouldn't be doing.
+
+Get back to root:
+
+```
+bob@af2e62e7233d:/$ exit
+root@af2e62e7233d:/# 
+```
+
 
 Directory commands
 ------------------

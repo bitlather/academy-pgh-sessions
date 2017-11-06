@@ -116,7 +116,7 @@ exit
 root@af2e62e7233d:/# 
 ```
 
-Next, we'll create a user that can sudo. Let's call her sue:
+Next, we'll create a user that can sudo. Let's call her suzy:
 
 ```
 # adduser suzy

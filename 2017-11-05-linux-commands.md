@@ -242,3 +242,11 @@ TODO
 Tail
 ----
 TODO
+
+curl
+----
+TODO
+
+Vim
+---
+TODO curl a wikipedia article then use vim to find text in it.

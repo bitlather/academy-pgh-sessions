@@ -53,7 +53,7 @@ If you don't see `root@af2e62e7233d:/#` then you might just need to press enter.
 
 
 Installing Software
--------------------------------
+-------------------
 We use `apt-get` in ubuntu to install software. First, we must update our repositories, so that we can then install the latest software. This is especially important for new Ubuntu containers in docker, as they come with practically nothing.
 ```
 $ apt-get update
@@ -72,3 +72,50 @@ We can pass the `-y` flag so that packages are installed without us pressing yes
 ```
 $ apt-get install -y vim
 ```
+
+At this point, you should be logged in as root. If you're not logged in as root, you will likely need to prefix the above commands with `sudo`. We'll talk about that more in a bit.
+
+Creating a user
+---------------
+TODO
+
+Sudo
+----
+TODO
+
+Directory commands
+------------------
+TODO ls, cd, grep, find, touch, find
+
+chmod
+-----
+TODO
+
+Variables
+---------
+TODO export allows variables to be accessed by subprocesses; see:
+```
+al$ foo="Hello, World"
+al$ echo $foo
+Hello, World
+al$ bar="Goodbye"
+al$ export foo
+al$ bash
+bash-3.2$ echo $foo
+Hello, World
+bash-3.2$ echo $bar
+
+bash-3.2$ 
+```
+
+Cron
+----
+TODO
+
+Processes
+---------
+TODO
+
+Tail
+----
+TODO

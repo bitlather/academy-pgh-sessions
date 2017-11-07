@@ -21,9 +21,9 @@ It's best to run through these in order your first time, as some sections may re
     - [cd](cd.md) - change directory
     - cat TODO have two jim hopper quotes and use cat to append to file.
     - tail TODO
+    - [touch](touch.md) - create an empty file
     - [rm](rm.md) - delete files
     - [mkdir & rmdir](mkdir_and_rmdir.md) - make and delete directories
-    - [touch](touch.md) - create an empty file
     - [cp](cp.md) - copy a file
 
 grep, find

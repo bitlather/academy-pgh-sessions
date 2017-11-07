@@ -46,7 +46,9 @@ TODO
 suzy@af2e62e7233d:~$ sudo apt-get install curl
 [sudo] password for suzy: 
 
-Future:
+Future
+------
+
 - bash scripting
 - vim
 - cron

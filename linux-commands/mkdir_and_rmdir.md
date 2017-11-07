@@ -3,15 +3,15 @@
 
 We use `mkdir` to create directories and `rmdir` to delete them (most of the time).
 
-`mkdir`
--------
-
 If you're not already logged in as suzy, do so now:
 
 ```
 root@af2e62e7233d:/# su suzy
 suzy@af2e62e7233d:/$ 
 ```
+
+`mkdir`
+-------
 
 Go to suzy's home directory:
 
@@ -131,4 +131,26 @@ dustin
 ```
 suzy@af2e62e7233d:~/stranger-things$ rm dustin/
 rm: cannot remove 'dustin/': Is a directory
+```
+
+Sorry Dustin, but you've got to go too:
+
+```
+suzy@af2e62e7233d:~/stranger-things$ rmdir /home/suzy/stranger-things/dustin/
+suzy@af2e62e7233d:~/stranger-things$ ls
+```
+
+Finally, let's delete the _stranger-things_ folder. I did some weird stuff here; I include it so you can see it but don't dwell on it too long:
+
+```
+suzy@af2e62e7233d:~/stranger-things$ rmdir .
+rmdir: failed to remove '.': Invalid argument
+suzy@af2e62e7233d:~/stranger-things$ rmdir ~/stranger-things/
+suzy@af2e62e7233d:~/stranger-things$ ls
+ls: cannot open directory '.': Stale file handle
+suzy@af2e62e7233d:~/stranger-things$ pwd
+/home/suzy/stranger-things
+suzy@af2e62e7233d:~/stranger-things$ cd ..
+suzy@af2e62e7233d:~$ ls
+suzy@af2e62e7233d:~$ 
 ```

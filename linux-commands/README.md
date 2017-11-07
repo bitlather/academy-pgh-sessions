@@ -18,9 +18,10 @@ It's best to run through these in order your first time, as some sections may re
     - [ls](ls.md) - list files and folders
     - [cd](cd.md) - change directory
     - [mkdir & rmdir](mkdir_and_rmdir.md) - make and delete directories
+    - [touch](touch.md) - create an empty file
+    - [cp](cp.md) - copy a file
 
-
-cp, touch, rm,
+cp, rm,
 
 grep, find
 

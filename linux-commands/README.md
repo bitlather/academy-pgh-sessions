@@ -17,9 +17,10 @@ It's best to run through these in order your first time, as some sections may re
 4. File & directory commands:
     - [ls](ls.md) - list files and folders
     - [cd](cd.md) - change directory
+    - [mkdir & rmdir](mkdir_and_rmdir.md) - make and delete directories
 
 
-cp, mkdir, touch, rm/rmdir,
+cp, touch, rm,
 
 grep, find
 

@@ -121,7 +121,7 @@ Mornings are for coffee and contemplation.
 Additional Info
 ---------------
 
-For more details, see [linfo.org/cat](http://www.linfo.org/cat.html).
+If you want to read even more about `cat`, see [linfo.org/cat](http://www.linfo.org/cat.html).
 
 
 Cleanup

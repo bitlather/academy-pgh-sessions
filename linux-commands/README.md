@@ -9,7 +9,7 @@ If you are following from home, look for instructions on how to install docker. 
 Contents
 --------
 
-It's best to run through these in order your first time, as some sections may rely on others.
+It's best to run through these in order your first time, as some sections may rely on what you learned in others.
 
 1. [Create ubuntu container](Create_ubuntu_container.md)
 2. [Installing software on ubuntu](Installing_software_on_ubuntu.md)
@@ -18,17 +18,38 @@ It's best to run through these in order your first time, as some sections may re
     - [ls](ls.md)
 
 
-Directory commands
-==================
+cd, cp, mkdir, touch, rm/rmdir,
 
+grep, find
 
-cd, grep, find, touch, find, tab, cp, mkdir, rm, rmdir
 
 symlinks
 --------
 
 chmod
 -----
+
+Redirecting command output to file
+----------------------------------
+TODO see https://askubuntu.com/questions/420981/how-do-i-save-terminal-output-to-a-file
+
+Cat
+---
+TODO
+
+curl
+----
+TODO
+
+Vim
+---
+TODO curl a wikipedia article then use vim to find text in it.
+
+Tail
+----
+TODO
+
+
 
 Variables
 ---------
@@ -59,22 +80,4 @@ Processes
 ---------
 TODO
 
-Redirecting command output to file
-----------------------------------
-TODO see https://askubuntu.com/questions/420981/how-do-i-save-terminal-output-to-a-file
 
-Tail
-----
-TODO
-
-Cat
----
-TODO
-
-curl
-----
-TODO
-
-Vim
----
-TODO curl a wikipedia article then use vim to find text in it.

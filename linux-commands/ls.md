@@ -1,7 +1,7 @@
 `ls`
 ====
 
-_This document assumes you are logged in as root. TO make sure you're in the right folder in order to follow along, run the following:_
+_This document assumes you are logged in as root. To make sure you're in the right folder in order to follow along, run the following:_
 
 ```
 root@af2e62e7233d:/# cd /

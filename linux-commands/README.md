@@ -23,39 +23,9 @@ It's best to run through these in order your first time, as some sections may re
     - cat TODO
     - tail TODO
     - [cp](cp.md) - copy a file
-
-cp, rm,
+	- rm TODO
 
 grep, find
-
-
-symlinks
---------
-
-chmod
------
-
-Redirecting command output to file
-----------------------------------
-TODO see https://askubuntu.com/questions/420981/how-do-i-save-terminal-output-to-a-file
-
-Cat
----
-TODO
-
-curl
-----
-TODO
-
-Vim
----
-TODO curl a wikipedia article then use vim to find text in it.
-
-Tail
-----
-TODO
-
-
 
 Variables
 ---------
@@ -73,6 +43,29 @@ bash-3.2$ echo $bar
 
 bash-3.2$ 
 ```
+
+
+symlinks
+--------
+
+chmod
+-----
+
+Redirecting command output to file
+----------------------------------
+TODO see https://askubuntu.com/questions/420981/how-do-i-save-terminal-output-to-a-file
+
+
+curl
+----
+TODO
+
+Vim
+---
+TODO curl a wikipedia article then use vim to find text in it.
+
+
+
 
 Bash scripts
 ------------

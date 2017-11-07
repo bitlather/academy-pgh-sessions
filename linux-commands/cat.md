@@ -96,7 +96,8 @@ Hey, you've reached Jim. I'm probably doing something incredible right now.
 Notice how that differs from:
 
 ```
-suzy@af2e62e7233d:~/stranger-things$ cat jim_hopper.* > test.txt               
+suzy@af2e62e7233d:~/stranger-things$ cat jim_hopper.* > test.txt
+
 suzy@af2e62e7233d:~/stranger-things$ cat test.txt 
 Mornings are for coffee and contemplation.
 Mornings are for coffee and contemplation.
@@ -104,7 +105,7 @@ Bike like this is like a Cadillac to these kids.
 Hey, you've reached Jim. I'm probably doing something incredible right now.
 ```
 
-The first line was duplicated because it's using **jim_hopper.**1.quote.backup, **jim_hopper.**1.quote, **jim_hopper.**2.quote, and **jim_hopper.**3.quote.
+The first line was duplicated because it's using *jim_hopper.*1.quote.backup, *jim_hopper.*1.quote, *jim_hopper.*2.quote, and *jim_hopper.*3.quote.
 
 We can also sort the quotes and store them:
 

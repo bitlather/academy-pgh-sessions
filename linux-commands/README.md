@@ -11,7 +11,7 @@ Contents
 
 It's best to run through these in order your first time, as some sections may rely on others.
 
-1. [Create ubuntu container](Create_Ubuntu_Container.md)
+1. [Create ubuntu container](Create_ubuntu_container.md)
 2. [Installing software on ubuntu](Installing_software_on_ubuntu.md)
 
 

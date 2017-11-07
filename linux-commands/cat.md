@@ -117,6 +117,13 @@ Hey, you've reached Jim. I'm probably doing something incredible right now.
 Mornings are for coffee and contemplation.
 ```
 
+
+Additional Info
+---------------
+
+For more details, see [linfo.org/cat](http://www.linfo.org/cat.html).
+
+
 Cleanup
 -------
 

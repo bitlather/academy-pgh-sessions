@@ -112,7 +112,11 @@ The first line was duplicated because the wildcard matches on:
 - [jim_hopper.]2.quote
 - [jim_hopper.]3.quote
 
-We can also `sort` the quotes and store them:
+We can also `sort` the quotes and store them. The following will:
+
+- concatenate the contents of all files that start with `jim_hopper.` and end with `.quote`
+- sort them by line
+- write the sorted lines to the file compiled.sorted.jim_hopper.quotes.
 
 ```
 suzy@af2e62e7233d:~/stranger-things$ cat jim_hopper.*.quote | sort > compiled.sorted.jim_hopper.quotes 

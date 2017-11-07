@@ -40,6 +40,9 @@ I don't normally have much use for the `touch` command, but sometimes it's nice 
 
 Or, maybe you want to write a script that appends text to a file. The file must exist first. You can use `touch` before appending to ensure the file exists; it will not throw an error or alter the file if it already exists (see the Jim Hopper example above).
 
+Cleanup
+-------
+
 Let's clear out the directory because we'll be using `stranger-things` in other tutorials:
 
 ```

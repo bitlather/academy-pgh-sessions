@@ -19,12 +19,12 @@ It's best to run through these in order your first time, as some sections may re
 6. File & directory commands:
     - [ls](ls.md) - list files and folders
     - [cd](cd.md) - change directory
-    - cat TODO have two jim hopper quotes and use cat to append to file.
-    - tail TODO
+    - [cat](cat.md) - display file contents
     - [touch](touch.md) - create an empty file
     - [rm](rm.md) - delete files
     - [mkdir & rmdir](mkdir_and_rmdir.md) - make and delete directories
     - [cp](cp.md) - copy a file
+    - tail TODO
 
 grep, find
 
@@ -36,32 +36,16 @@ symlinks
 chmod
 -----
 
-Redirecting command output to file
-----------------------------------
-TODO see https://askubuntu.com/questions/420981/how-do-i-save-terminal-output-to-a-file
-
-
 curl
 ----
 TODO
 
-Vim
----
-TODO curl a wikipedia article then use vim to find text in it.
+suzy@af2e62e7233d:~$ sudo apt-get install curl
+[sudo] password for suzy: 
 
-
-
-
-Bash scripts
-------------
-TODO Create a bash script that echoes "hello" if a variable is on, then add it to cron so we can turn it on/off.
-
-Cron
-----
-TODO
-
-Processes
----------
-TODO
-
-
+Future:
+- bash scripting
+- vim
+- cron
+- killing processes
+- tar / zip

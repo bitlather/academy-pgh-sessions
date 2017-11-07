@@ -22,7 +22,7 @@ It's best to run through these in order your first time, as some sections may re
 6. File & directory commands:
     - [ls](ls.md) - list files and folders
     - [cd](cd.md) - change directory
-    - [cat](cat.md) - display file contents
+    - [cat and sort](cat_and_sort.md) - display file contents, merge files into one, and sorting file contents.
     - [touch](touch.md) - create an empty file
     - [rm](rm.md) - delete files
     - [mkdir & rmdir](mkdir_and_rmdir.md) - make and delete directories

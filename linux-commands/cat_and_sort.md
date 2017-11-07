@@ -1,7 +1,5 @@
-`cat`
-=====
-
-You can use `cat` to echo the contents of a file.
+`cat` and `sort`
+================
 
 If you're not already logged in as suzy, do so now:
 
@@ -24,6 +22,8 @@ suzy@af2e62e7233d:~$ mkdir stranger-things
 suzy@af2e62e7233d:~$ cd stranger-things/
 suzy@af2e62e7233d:~/stranger-things$ 
 ```
+
+You can use `cat` to echo the contents of a file.
 
 Let's make some files.
 
@@ -121,6 +121,24 @@ suzy@af2e62e7233d:~/stranger-things$ cat compiled.sorted.jim_hopper.quotes
 Bike like this is like a Cadillac to these kids.
 Hey, you've reached Jim. I'm probably doing something incredible right now.
 Mornings are for coffee and contemplation.
+```
+
+In case you're unclear on how `sort` works, try this with a single file:
+
+```
+suzy@af2e62e7233d:~$ cd ~   
+suzy@af2e62e7233d:~$ echo "Z" > alphabet.txt
+suzy@af2e62e7233d:~$ echo "A" >> alphabet.txt
+suzy@af2e62e7233d:~$ echo "D" >> alphabet.txt
+suzy@af2e62e7233d:~$ cat alphabet.txt 
+Z
+A
+D
+suzy@af2e62e7233d:~$ cat alphabet.txt | sort
+A
+D
+Z
+suzy@af2e62e7233d:~$ rm alphabet.txt 
 ```
 
 

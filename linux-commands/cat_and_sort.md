@@ -53,7 +53,7 @@ Mornings are for coffee and contemplation.
 Bike like this is like a Cadillac to these kids.
 ```
 
-We can pass the output of two or more files into sort to alphabetize them:
+We can pass the output of two or more files into `sort` to alphabetize them:
 
 ```
 suzy@af2e62e7233d:~/stranger-things$ cat jim_hopper.1.quote jim_hopper.2.quote | sort
@@ -61,7 +61,7 @@ Bike like this is like a Cadillac to these kids.
 Mornings are for coffee and contemplation.
 ```
 
-We can pass the output of all files using `*` into sort to alphabetize them:
+We can take the output of all files with a name that matches a pattern using `*`, then pass that into `sort` to alphabetize them:
 
 ```
 suzy@af2e62e7233d:~/stranger-things$ cat jim_hopper.*.quote | sort
@@ -112,7 +112,7 @@ The first line was duplicated because the wildcard matches on:
 - [jim_hopper.]2.quote
 - [jim_hopper.]3.quote
 
-We can also sort the quotes and store them:
+We can also `sort` the quotes and store them:
 
 ```
 suzy@af2e62e7233d:~/stranger-things$ cat jim_hopper.*.quote | sort > compiled.sorted.jim_hopper.quotes 

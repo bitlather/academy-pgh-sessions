@@ -1,5 +1,5 @@
 Creating users & sudo
----------------------
+=====================
 
 We will create two users: one who is capable of running `sudo` commands, and one who isn't. Don't worry about what that means now.
 

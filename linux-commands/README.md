@@ -15,10 +15,11 @@ It's best to run through these in order your first time, as some sections may re
 2. [Installing software on ubuntu](Installing_software_on_ubuntu.md)
 3. [Creating users & sudo](Creating_users_and_sudo.md)
 4. File & directory commands:
-    - [ls](ls.md)
+    - [ls](ls.md) - list files and folders
+    - [cd](cd.md) - change directory
 
 
-cd, cp, mkdir, touch, rm/rmdir,
+cp, mkdir, touch, rm/rmdir,
 
 grep, find
 

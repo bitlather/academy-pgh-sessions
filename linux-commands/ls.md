@@ -11,16 +11,16 @@ Type `ls` to list files and folders.
 
 ```
 root@af2e62e7233d:/# ls
-TEST.DAVE  boot  etc   lib    media  opt   root  sbin  sys  usr
-bin        dev   home  lib64  mnt    proc  run   srv   tmp  var
+bin   dev  home  lib64  mnt  proc  run   srv  tmp  var
+boot  etc  lib   media  opt  root  sbin  sys  usr
 ```
 
 Use the `-a` flag to list hidden files (of note is `.dockerenv`; we'll talk more about `.` and `..` later):
 
 ```
 root@af2e62e7233d:/# ls -a
-.   .dockerenv  bin   dev  home  lib64  mnt  proc  run   srv  tmp  var
-..  TEST.DAVE   boot  etc  lib   media  opt  root  sbin  sys  usr
+.   .dockerenv  boot  etc   lib    media  opt   root  sbin  sys  usr
+..  bin         dev   home  lib64  mnt    proc  run   srv   tmp  var
 ```
 
 Hidden files are (usually) prefixed with a dot.
@@ -30,7 +30,6 @@ Use the `-l` flag to list more details:
 ```
 root@af2e62e7233d:/# ls -l
 total 64
--rw-r--r--   1 root root    0 Nov  6 00:19 TEST.DAVE
 drwxr-xr-x   2 root root 4096 Oct  6 01:38 bin
 drwxr-xr-x   2 root root 4096 Apr 12  2016 boot
 drwxr-xr-x   5 root root  380 Nov  7 01:08 dev
@@ -52,15 +51,16 @@ drwxr-xr-x  17 root root 4096 Nov  6 01:35 usr
 drwxr-xr-x  16 root root 4096 Nov  6 00:50 var
 ```
 
+The `d` in the first column means directory, the `rwx-` values are permissions (which will be discussed in the `chmod` tutorial), the file belongs to the `root` user, the column with values like `4096` is the size in bytes, then comes the date/time and name of the file/folder.
+
 If you want to see hidden files with more details you can do `ls -a -l` or `ls -al`:
 
 ```
 root@af2e62e7233d:/# ls -al
 total 72
-drwxr-xr-x  42 root root 4096 Nov  7 01:08 .
-drwxr-xr-x  42 root root 4096 Nov  7 01:08 ..
+drwxr-xr-x  42 root root 4096 Nov  7 02:43 .
+drwxr-xr-x  42 root root 4096 Nov  7 02:43 ..
 -rwxr-xr-x   1 root root    0 Nov  6 00:19 .dockerenv
--rw-r--r--   1 root root    0 Nov  6 00:19 TEST.DAVE
 drwxr-xr-x   2 root root 4096 Oct  6 01:38 bin
 drwxr-xr-x   2 root root 4096 Apr 12  2016 boot
 drwxr-xr-x   5 root root  380 Nov  7 01:08 dev

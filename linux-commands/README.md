@@ -6,6 +6,9 @@ Use the instructions provided in the session for building your own Ubuntu instan
 If you are following from home, look for instructions on how to install docker. I already had ubuntu, so I used this guide (which won't work on OSX or Windows):
 - https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04
 
+Most of these documents should work in OSX's terminal, too. You should follow this tutorial with ubuntu, since some things, like installing software, will differ. Just keep this in mind if you typically develop on a Mac.
+
+
 Contents
 --------
 

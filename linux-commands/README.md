@@ -11,16 +11,16 @@ Contents
 
 It's best to run through these in order your first time, as some sections may rely on what you learned in others.
 
-1. [Create ubuntu container](Create_ubuntu_container.md)
+1. [Create ubuntu container](Create_ubuntu_container.md) - also how to log back in to your container in case you log out
 2. [Installing software on ubuntu](Installing_software_on_ubuntu.md)
 3. [Creating users & sudo](Creating_users_and_sudo.md)
-4. Echo and variables TODO - with echoing into a file
+4. [echo and variables](echo_and_variables.md) - also writing command output to a file
 5. File & directory commands:
     - [ls](ls.md) - list files and folders
     - [cd](cd.md) - change directory
     - [mkdir & rmdir](mkdir_and_rmdir.md) - make and delete directories
     - [touch](touch.md) - create an empty file
-    - cat TODO
+    - cat TODO have two jim hopper quotes and use cat to append to file.
     - tail TODO
     - [cp](cp.md) - copy a file
 	- rm TODO

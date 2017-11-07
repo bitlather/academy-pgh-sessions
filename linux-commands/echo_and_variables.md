@@ -134,6 +134,8 @@ drwxr-xr-x  17 root root 4096 Nov  6 01:35 usr
 drwxr-xr-x  16 root root 4096 Nov  6 00:50 var
 ```
 
+Note that some output in programs, like git, are considered "error stream." That requires special handling for it to write to a file, and will not be covered here - just be aware of it in case you ever go deeper with bash programming.
+
 
 Variables
 ---------
@@ -170,4 +172,66 @@ suzy@af2e62e7233d:~/stranger-things$ echo 'The bad people are in $BAD_PEOPLE'
 The bad people are in $BAD_PEOPLE
 ```
 
-If you want to make the variables available to other processes, you have to use `EXPORT`. We will not cover that in this document.
+This is a bit advanced, so don't worry too much about understanding it. If you want to make the variables available to sub processes, you have to use `EXPORT`. Here's an example:
+
+```
+suzy@af2e62e7233d:~/stranger-things$ cd ~
+
+suzy@af2e62e7233d:/$ greeting="Hello, world"
+
+suzy@af2e62e7233d:/$ echo $greeting
+Hello, world
+
+suzy@af2e62e7233d:/$ bye="Goodbye"
+
+suzy@af2e62e7233d:/$ export greeting
+
+suzy@af2e62e7233d:/$ bash
+                                        <== WE'RE NOW IN A SUB PROCESS
+
+suzy@af2e62e7233d:/$ echo $greeting
+Hello, world
+
+suzy@af2e62e7233d:/$ echo $bye
+                                        <== NOTICE nothing happened
+
+suzy@af2e62e7233d:/$ exit
+exit                                    <== NO LONGER IN SUBPROCESS
+
+suzy@af2e62e7233d:/$ echo $greeting
+Hello, world
+
+suzy@af2e62e7233d:/$ echo $bye
+Goodbye
+
+```
+
+You can export a variable when you create it:
+
+```
+suzy@af2e62e7233d:/$ export inline="Combine export and variable declaration"
+
+suzy@af2e62e7233d:/$ bash
+                                        <== WE'RE NOW IN A SUB PROCESS
+
+suzy@af2e62e7233d:/$ echo $inline
+Combine export and variable declaration <== IT WORKED!
+
+suzy@af2e62e7233d:/$ exit 
+exit                                    <== NO LONGER IN SUBPROCESS
+
+suzy@af2e62e7233d:/$ echo $inline
+Combine export and variable declaration <== STILL WORKS
+```
+
+
+Cleanup
+-------
+
+Let's remove our directory to keep things clean for future tutorials. We'll cover this command in more detail in another tutorial:
+
+```
+suzy@af2e62e7233d:~/stranger-things$ cd ~
+
+suzy@af2e62e7233d:~$ rm -r stranger-things/
+```

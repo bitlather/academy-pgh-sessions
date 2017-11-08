@@ -191,7 +191,6 @@ Cleanup
 Please do the following to keep things tidy:
 
 ```
-suzy@af2e62e7233d:~/stranger-things$ cd ~
-suzy@af2e62e7233d:~$ rmdir stranger-things/
+suzy@af2e62e7233d:~$ rm sleepy.sh
 ```
 

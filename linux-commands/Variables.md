@@ -9,6 +9,7 @@ If you're not already logged in as suzy, do so now:
 root@af2e62e7233d:/# su suzy
 suzy@af2e62e7233d:/$ cd ~
 suzy@af2e62e7233d:~$ mkdir stranger-things
+suzy@af2e62e7233d:~$ cd stranger-things
 ```
 
 You can create a variable with a simple equals sign and get its value using `$`:

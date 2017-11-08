@@ -27,7 +27,9 @@ It's best to run through these in order your first time, as some sections may re
     - [rm](rm.md) - delete files
     - [mkdir & rmdir](mkdir_and_rmdir.md) - make and delete directories
     - [cp](cp.md) - copy a file
-    - tail TODO
+    - [tail](tail.md) - look at end of file; useful for error logging
+
+**end of tutorial**
 
 grep, find
 

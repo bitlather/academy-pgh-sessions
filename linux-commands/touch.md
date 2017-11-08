@@ -30,7 +30,6 @@ Let's create some files:
 ```
 suzy@af2e62e7233d:~/stranger-things$ touch will.quotes
 suzy@af2e62e7233d:~/stranger-things$ touch dustin.quotes
-suzy@af2e62e7233d:~/stranger-things$ touch jim_hopper
 suzy@af2e62e7233d:~/stranger-things$ touch jim_hopper.quotes
 suzy@af2e62e7233d:~/stranger-things$ ls
 dustin.quotes  jim_hopper.quotes  will.quotes

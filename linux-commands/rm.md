@@ -32,9 +32,9 @@ suzy@af2e62e7233d:~/stranger-things$ echo "" > jim_hopper.quotes
 suzy@af2e62e7233d:~/stranger-things$ echo "" > eleven.quotes
 suzy@af2e62e7233d:~/stranger-things$ echo "" > dustin.quotes
 suzy@af2e62e7233d:~/stranger-things$ echo "" > lucas.quotes
-suzy@af2e62e7233d:~/stranger-things$ echo "" > barb.fanfic 
+suzy@af2e62e7233d:~/stranger-things$ echo "" > barb.fanfic
 suzy@af2e62e7233d:~/stranger-things$ ls
-dustin.quotes  eleven.quotes  jim_hopper.quotes  lucas.quotes
+barb.fanfic dustin.quotes  eleven.quotes  jim_hopper.quotes  lucas.quotes
 ```
 
 Now let's delete eleven. Start by typing `rm e` and tab twice to autocomplete:
@@ -42,7 +42,7 @@ Now let's delete eleven. Start by typing `rm e` and tab twice to autocomplete:
 ```
 suzy@af2e62e7233d:~/stranger-things$ rm eleven.quotes
 suzy@af2e62e7233d:~/stranger-things$ ls
-dustin.quotes  jim_hopper.quotes  lucas.quotes
+barb.fanfic dustin.quotes  jim_hopper.quotes  lucas.quotes
 ```
 
 Let's get a bit more interesting. First, create a few more files with a different extension:

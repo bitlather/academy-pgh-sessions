@@ -7,7 +7,7 @@ If you're not already logged in as suzy, do so now:
 
 ```
 root@af2e62e7233d:/# su suzy
-suzy@af2e62e7233d:/$ 
+suzy@af2e62e7233d:/$
 ```
 
 Go to suzy's home directory:
@@ -22,7 +22,7 @@ Create and change into the _stranger-things_ directory:
 ```
 suzy@af2e62e7233d:~$ mkdir stranger-things
 suzy@af2e62e7233d:~$ cd stranger-things/
-suzy@af2e62e7233d:~/stranger-things$ 
+suzy@af2e62e7233d:~/stranger-things$
 ```
 
 Let's create some files:
@@ -32,6 +32,7 @@ suzy@af2e62e7233d:~/stranger-things$ echo "" > jim_hopper.quotes
 suzy@af2e62e7233d:~/stranger-things$ echo "" > eleven.quotes
 suzy@af2e62e7233d:~/stranger-things$ echo "" > dustin.quotes
 suzy@af2e62e7233d:~/stranger-things$ echo "" > lucas.quotes
+suzy@af2e62e7233d:~/stranger-things$ echo "" > barb.fanfic 
 suzy@af2e62e7233d:~/stranger-things$ ls
 dustin.quotes  eleven.quotes  jim_hopper.quotes  lucas.quotes
 ```
@@ -39,7 +40,7 @@ dustin.quotes  eleven.quotes  jim_hopper.quotes  lucas.quotes
 Now let's delete eleven. Start by typing `rm e` and tab twice to autocomplete:
 
 ```
-suzy@af2e62e7233d:~/stranger-things$ rm eleven.quotes 
+suzy@af2e62e7233d:~/stranger-things$ rm eleven.quotes
 suzy@af2e62e7233d:~/stranger-things$ ls
 dustin.quotes  jim_hopper.quotes  lucas.quotes
 ```
@@ -80,7 +81,7 @@ Let's just delete everything:
 ```
 suzy@af2e62e7233d:~/stranger-things$ rm *
 suzy@af2e62e7233d:~/stranger-things$ ls
-suzy@af2e62e7233d:~/stranger-things$ 
+suzy@af2e62e7233d:~/stranger-things$
 ```
 
 For this reason, be careful using `*` with `rm`.

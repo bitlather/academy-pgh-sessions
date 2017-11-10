@@ -1,7 +1,7 @@
 API Using Flask and Mongo
 =========================
 
-**WARNING: VENV FAILED WITH THESE INSTRUCTIONS IN THE DOCKER INSTANCES; IF WE DO THIS SESSION AGAIN THEN IRON THESE DETAILS OUT**
+**WARNING: VENV FAILED WITH THESE INSTRUCTIONS IN THE DOCKER INSTANCES; IF WE DO THIS SESSION AGAIN THEN IRON THESE DETAILS OUT. I DO NOT RECOMMEND FOLLOWING THIS TUTORIAL AT THIS TIME.**
 
 In this lab, we will create an API using Python's Flask framework and Mongo as our NoSQL database. It is assumed you are running these instructions with the Ubuntu instances that John Lange has set up.
 

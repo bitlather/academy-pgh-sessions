@@ -9,6 +9,15 @@ If you are following from home, look for instructions on how to install docker. 
 Most of these documents should work in OSX's terminal, too. You should follow this tutorial with ubuntu, since some things, like installing software, will differ. Just keep this in mind if you typically develop on a Mac.
 
 
+Recommended Book
+----------------
+
+This book is probably better than learning from a bunch of disparate online tutorials, if you really want to dig into unix: 
+
+Guide to UNIX Using Linux
+by Jack Dent, Tony Gaddis
+https://www.barnesandnoble.com/w/guide-to-unix-using-linux-jack-dent/1101821766?ean=9780760010969
+
 Contents
 --------
 

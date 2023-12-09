@@ -1,0 +1,155 @@
+<script src="combination-sum-39 A.js"></script>
+<script src="combination-sum-39 B.js"></script>
+<script src="combination-sum-39 C.js"></script>
+<script src="combination-sum-39 D.js"></script>
+<script src="combination-sum-39 E.js"></script>
+<script src="combination-sum-39 F.js"></script>
+<script src="combination-sum-39 G.js"></script>
+<script src="combination-sum-39 H.js"></script>
+
+<script>
+  let stream="";
+  const outputContainer = () => document.getElementById("output");
+  const clear = () => {
+    outputContainer().innerText = "";
+    clearStream();
+  }
+  const clearStream = () => stream = "";
+  const log = (text) => {
+    outputContainer().innerText += text + "\n";
+  }
+  const logToStream = (text) => {
+    stream += text + "\n";
+  };
+
+  const testCases = [
+    { input : []          ,   target :  2   ,   expected : []                                      },
+    { input : [1]         ,   target :  2   ,   expected : [[1,1]]                                 },
+    { input : [1]         ,   target :  3   ,   expected : [[1,1,1]]                               },
+    { input : [1, 2]      ,   target :  3   ,   expected : [[1,1,1], [1,2]]                        },
+    { input : [2, 3, 5]   ,   target :  8   ,   expected : [[2,2,2,2], [2,3,3], [3,5]]             },
+    { input : [2, 3]      ,   target : 12   ,   expected : [[2,2,2,2,2,2], [2,2,2,3,3], [3,3,3,3]] }
+  ];
+
+  const whichTest = () => document.querySelector('input[name="whichTest"]:checked').value;
+  let whichStep = null;//partH;
+  const runTest = (part=null) => {
+    if (part != null) whichStep = part;
+    whichStep(whichTest());
+  }
+</script>
+
+<style>
+html,body { width: 100%; margin:0; padding: 0; }
+table { width: 100%; }
+td { padding: 20px; }
+.tests { background-color: #ccc; padding: 10px; margin-bottom: 1em; }
+</style>
+
+<table>
+  <tr><td valign="top">
+
+    Step:
+    <button onclick="runTest(partA);">A</button>
+    <button onclick="runTest(partB);">B</button>
+    <button onclick="runTest(partC);">C</button>
+    <button onclick="runTest(partD);">D</button>
+    <button onclick="runTest(partE);">E</button>
+    <button onclick="runTest(partF);">F</button>
+    <button onclick="runTest(partG);">G</button>
+    <button onclick="runTest(partH);">H</button>
+    
+    <br />&nbsp;<br />
+    
+
+
+    <pre id="output">
+Above this text are buttons that represent the steps you might take to solve this
+recursion interview problem.
+
+Click on each one, left-to-right, to get an explanation for how the code works in
+each step.
+
+To the right, you can select which specific test you want to be explained in detail.
+
+Try to solve this problem on your own first. Don't spend more than 1 hour on it.
+
+Then, go through each step above, and when prompted, try to solve the remaining
+issues.
+
+You can see the code that's running in the following files:
+
+  - combination-sum-39 A.js
+  - combination-sum-39 B.js
+  - combination-sum-39 C.js
+  - combination-sum-39 D.js
+  - combination-sum-39 E.js
+  - combination-sum-39 F.js
+  - combination-sum-39 G.js
+  - combination-sum-39 H.js
+
+Finally... this tutorial was thrown together VERY QUICKLY. Aside from the algorithm
+that you're learning, all other code is garbage. Don't judge me 😅 this took a few
+hours to write as-is.
+    </pre>
+
+  </td><td width="400px" valign="top">
+
+    <p>Powered with 🏳️‍⚧️💜</p>
+
+    <div class="tests">
+      <b>Explain Test:</b><br />
+      <label><input onClick="runTest();" type="radio" name="whichTest" value="0"><tt>Test 1: input = [], target = 2</tt></label><br />
+      <label><input onClick="runTest();" type="radio" name="whichTest" value="1"><tt>Test 2: input = [1], target = 2     </tt></label><br />
+      <label><input onClick="runTest();" type="radio" name="whichTest" value="2"><tt>Test 3: input = [1], target = 3     </tt></label><br />
+      <label><input onClick="runTest();" type="radio" name="whichTest" value="3" checked="checked"><tt>Test 4: input = [1,2], target = 3   </tt></label><br />
+      <label><input onClick="runTest();" type="radio" name="whichTest" value="4"><tt>Test 5: input = [2,3,5], target = 8 </tt></label><br />
+      <label><input onClick="runTest();" type="radio" name="whichTest" value="5"><tt>Test 6: input = [2,3], target = 12  </tt></label><br />
+    </div>
+
+    Source: <a href="https://leetcode.com/problems/combination-sum/"">https://leetcode.com/problems/combination-sum/</a>
+
+    <div class="px-5 pt-4"><div class="flex"></div><div class="xFUwe" data-track-load="description_content"><p>Given an array of <strong>distinct</strong> integers <code>candidates</code> and a target integer <code>target</code>, return <em>a list of all <strong>unique combinations</strong> of </em><code>candidates</code><em> where the chosen numbers sum to </em><code>target</code><em>.</em> You may return the combinations in <strong>any order</strong>.</p>
+
+      <p>The <strong>same</strong> number may be chosen from <code>candidates</code> an <strong>unlimited number of times</strong>. Two combinations are unique if the frequency of at least one of the chosen numbers is different.</p>
+      
+      <p>The test cases are generated such that the number of unique combinations that sum up to <code>target</code> is less than <code>150</code> combinations for the given input.</p>
+      
+      <p>&nbsp;</p>
+      <p><strong class="example">Example 1:</strong></p>
+      
+      <pre><strong>Input:</strong> candidates = [2,3,6,7], target = 7
+      <strong>Output:</strong> [[2,2,3],[7]]
+      <strong>Explanation:</strong>
+      2 and 3 are candidates, and 2 + 2 + 3 = 7. Note that 2 can be used multiple times.
+      7 is a candidate, and 7 = 7.
+      These are the only two combinations.
+      </pre>
+      
+      <p><strong class="example">Example 2:</strong></p>
+      
+      <pre><strong>Input:</strong> candidates = [2,3,5], target = 8
+      <strong>Output:</strong> [[2,2,2,2],[2,3,3],[3,5]]
+      </pre>
+      
+      <p><strong class="example">Example 3:</strong></p>
+      
+      <pre><strong>Input:</strong> candidates = [2], target = 1
+      <strong>Output:</strong> []
+      </pre>
+      
+      <p>&nbsp;</p>
+      <p><strong>Constraints:</strong></p>
+      
+      <ul>
+        <li><code>1 &lt;= candidates.length &lt;= 30</code></li>
+        <li><code>2 &lt;= candidates[i] &lt;= 40</code></li>
+        <li>All elements of <code>candidates</code> are <strong>distinct</strong>.</li>
+        <li><code>1 &lt;= target &lt;= 40</code></li>
+      </ul>
+    </div></div>
+
+  </td></tr>
+</table>
+
+<script>runTest();</script>
